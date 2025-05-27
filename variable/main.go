@@ -12,4 +12,7 @@ func main() {
 	var b = 24.6
 	fmt.Println(b)
 	fmt.Println(a + 26)
+
+	c := 3900
+	fmt.Println(c)
 }
