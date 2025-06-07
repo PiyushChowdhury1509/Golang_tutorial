@@ -26,4 +26,33 @@ func main() {
 	s3 := make([]int, 3)
 	copy(s3, s2)
 	fmt.Println("slice3:", s3)
+
+	//initializing a slice with default values
+	s4 := []int{1, 2, 3, 4, 5, 6}
+
+	//slice operator, this creates a slice with the syntax [low:high]. high isnt included
+	s5 := s4[2:5]
+	fmt.Println("slice5 after first operation:", s5)
+	s5 = s4[:5]
+	fmt.Println("slice5 after second operation:", s5)
+	s5 = s4[2:]
+	fmt.Println("slice5 after third operation:", s5)
+
+	//2d slices
+	s6 := make([][]int, 3)
+	count := 1
+	for i := 0; i < len(s6); i++ {
+		innerLength := i + 1
+		s6[i] = make([]int, innerLength)
+		for j := 0; j < innerLength; j++ {
+			s6[i][j] = count
+			count++
+		}
+	}
+	for i := range len(s6) {
+		for j := range len(s6[i]) {
+			fmt.Printf("%d ", s6[i][j])
+		}
+		fmt.Printf("\n")
+	}
 }
